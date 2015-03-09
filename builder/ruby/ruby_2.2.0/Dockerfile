@@ -10,6 +10,9 @@ WORKDIR /root/zeromq-4.0.5
 RUN ./configure && make && make install
 RUN ldconfig
 
+RUN curl -sSL https://get.docker.com/ubuntu/ | sudo sh
+RUN start docker
+
 WORKDIR /home/ubuntu
 USER ubuntu
 ADD rbenv.sh /etc/drone.d/
